@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Les menu :</h1>
+<ul>
+    {% for oMenu in lst %}
+        <li>
+		<em class="username">{{ oMenu.id }}</em>
+		:
+		{{ oMenu.title }}
+	</li>
+    {% endfor %}
+</ul>
+{% endblock %}

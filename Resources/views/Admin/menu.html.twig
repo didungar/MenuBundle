@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Le menu : {{ id_menu }}</h1>
+<h2 onclick="$('.insert').toggle();">Ajouter un element au menu :</h2>
+<form action="" method="POST" class="insert" style="display:none;">
+HTML : <input type="text" name="html" />
+<br />
+ACL : <input type="text" name="acl" />
+<br />
+Lien : <input type="text" name="href" />
+<br />
+TODO : <input type="submit" />
+</form>
+<h2>Les elements du menu :</h2>
+<ul>
+    {% for oMenu in lst %}
+        <li>
+		<em class="username" title="id={{ oMenu.id }}">{{ oMenu.html }}</em>
+		:
+		<a href="{{ oMenu.href }}">{{ oMenu.href }}</a>
+		<br />
+		{{ oMenu.acl }}
+	</li>
+    {% endfor %}
+</ul>
+{% endblock %}
